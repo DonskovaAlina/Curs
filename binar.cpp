@@ -5,7 +5,7 @@
 using namespace std;
 
 int main() {
-    // Создаем векторы
+    // Создаем векторы для записи в файл
     vector<vector<float>> vectors = {
         {1.0f, 2.0f, 3.0f}, // Вектор 1
         {4.0f, 5.0f}        // Вектор 2
@@ -19,11 +19,11 @@ int main() {
         return 1;
     }
 
-    // Записываем количество векторов
+    // Записываем количество векторов в файл
     uint32_t N = vectors.size();
     file.write(reinterpret_cast<const char*>(&N), sizeof(N));
 
-    // Записываем каждый вектор
+    // Записываем каждый вектор в файл
     for (const auto& vec : vectors) {
         uint32_t S = vec.size();
         file.write(reinterpret_cast<const char*>(&S), sizeof(S)); // Записываем размер вектора
