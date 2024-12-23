@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Cursovaya: Исходный файл /home/stud/Desktop/клиент/client_new/interface.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Cursovaya<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Курсовая работа. Клиент.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_f480c2f781f46b5c07c2166f4dbeedc2.html">клиент</a></li><li class="navelem"><a class="el" href="dir_bab0c4b2f4b3d6981fc9c7252d18d4bb.html">client_new</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">interface.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="interface_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifndef INTERFACE_H</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define INTERFACE_H</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="classInterface.html">   21</a></span><span class="keyword">class </span><a class="code hl_class" href="classInterface.html">Interface</a> {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_function" href="classInterface.html#a3c2384b5a07991ada02fa4a5698fd5af">Interface</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classInterface.html#a0b3d5a6257d96567329e15300ffdee0d">ParseCommandLine</a>();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    std::vector&lt;std::vector&lt;float&gt;&gt; <a class="code hl_function" href="classInterface.html#a67d862c4d181522ffcac372526f9cd13">ReadVectorsFromFile</a>(<span class="keyword">const</span> std::string&amp; filename);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classInterface.html#a9b615841f25b38f81f130a1fd619fcbf">ReadConfigFile</a>(<span class="keyword">const</span> std::string&amp; config_file, std::string&amp; login, std::string&amp; password);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="classInterface.html#a1d895d12687b8d58c6e1fa5b674217dd">   57</a></span>    std::string <a class="code hl_function" href="classInterface.html#a1d895d12687b8d58c6e1fa5b674217dd">GetInputFile</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> input_file_; }</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="classInterface.html#a57ccf2f10a29c387bf34bdd9dda1f96d">   63</a></span>    std::string <a class="code hl_function" href="classInterface.html#a57ccf2f10a29c387bf34bdd9dda1f96d">GetOutputFile</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> output_file_; }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="classInterface.html#a6a54404ae06d88627e30e4364947e678">   69</a></span>    std::string <a class="code hl_function" href="classInterface.html#a6a54404ae06d88627e30e4364947e678">GetConfigFile</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> config_file_; }</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="classInterface.html#aba762214883f588f20a18ff72d648192">   75</a></span>    std::string <a class="code hl_function" href="classInterface.html#aba762214883f588f20a18ff72d648192">GetServerAddress</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> server_address_; }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="classInterface.html#a281987c6e9603b4ed51a62d758a49911">   81</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classInterface.html#a281987c6e9603b4ed51a62d758a49911">GetServerPort</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> server_port_; }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordtype">int</span> argc_; </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordtype">char</span>** argv_; </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    std::string input_file_; </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    std::string output_file_; </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    std::string config_file_; </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    std::string server_address_; </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordtype">int</span> server_port_; </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>};</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="preprocessor">#endif </span><span class="comment">// INTERFACE_H</span></div>
+<div class="ttc" id="aclassInterface_html"><div class="ttname"><a href="classInterface.html">Interface</a></div><div class="ttdoc">Класс для обработки командной строки и чтения файлов.</div><div class="ttdef"><b>Definition:</b> interface.h:21</div></div>
+<div class="ttc" id="aclassInterface_html_a0b3d5a6257d96567329e15300ffdee0d"><div class="ttname"><a href="classInterface.html#a0b3d5a6257d96567329e15300ffdee0d">Interface::ParseCommandLine</a></div><div class="ttdeci">void ParseCommandLine()</div><div class="ttdoc">Парсинг командной строки.</div><div class="ttdef"><b>Definition:</b> interface.cpp:26</div></div>
+<div class="ttc" id="aclassInterface_html_a1d895d12687b8d58c6e1fa5b674217dd"><div class="ttname"><a href="classInterface.html#a1d895d12687b8d58c6e1fa5b674217dd">Interface::GetInputFile</a></div><div class="ttdeci">std::string GetInputFile() const</div><div class="ttdoc">Получение имени входного файла.</div><div class="ttdef"><b>Definition:</b> interface.h:57</div></div>
+<div class="ttc" id="aclassInterface_html_a281987c6e9603b4ed51a62d758a49911"><div class="ttname"><a href="classInterface.html#a281987c6e9603b4ed51a62d758a49911">Interface::GetServerPort</a></div><div class="ttdeci">int GetServerPort() const</div><div class="ttdoc">Получение порта сервера.</div><div class="ttdef"><b>Definition:</b> interface.h:81</div></div>
+<div class="ttc" id="aclassInterface_html_a3c2384b5a07991ada02fa4a5698fd5af"><div class="ttname"><a href="classInterface.html#a3c2384b5a07991ada02fa4a5698fd5af">Interface::Interface</a></div><div class="ttdeci">Interface(int argc, char *argv[])</div><div class="ttdoc">Конструктор класса Interface.</div><div class="ttdef"><b>Definition:</b> interface.cpp:19</div></div>
+<div class="ttc" id="aclassInterface_html_a57ccf2f10a29c387bf34bdd9dda1f96d"><div class="ttname"><a href="classInterface.html#a57ccf2f10a29c387bf34bdd9dda1f96d">Interface::GetOutputFile</a></div><div class="ttdeci">std::string GetOutputFile() const</div><div class="ttdoc">Получение имени выходного файла.</div><div class="ttdef"><b>Definition:</b> interface.h:63</div></div>
+<div class="ttc" id="aclassInterface_html_a67d862c4d181522ffcac372526f9cd13"><div class="ttname"><a href="classInterface.html#a67d862c4d181522ffcac372526f9cd13">Interface::ReadVectorsFromFile</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; float &gt; &gt; ReadVectorsFromFile(const std::string &amp;filename)</div><div class="ttdoc">Чтение векторов из файла.</div><div class="ttdef"><b>Definition:</b> interface.cpp:80</div></div>
+<div class="ttc" id="aclassInterface_html_a6a54404ae06d88627e30e4364947e678"><div class="ttname"><a href="classInterface.html#a6a54404ae06d88627e30e4364947e678">Interface::GetConfigFile</a></div><div class="ttdeci">std::string GetConfigFile() const</div><div class="ttdoc">Получение имени конфигурационного файла.</div><div class="ttdef"><b>Definition:</b> interface.h:69</div></div>
+<div class="ttc" id="aclassInterface_html_a9b615841f25b38f81f130a1fd619fcbf"><div class="ttname"><a href="classInterface.html#a9b615841f25b38f81f130a1fd619fcbf">Interface::ReadConfigFile</a></div><div class="ttdeci">void ReadConfigFile(const std::string &amp;config_file, std::string &amp;login, std::string &amp;password)</div><div class="ttdoc">Чтение конфигурационного файла.</div><div class="ttdef"><b>Definition:</b> interface.cpp:107</div></div>
+<div class="ttc" id="aclassInterface_html_aba762214883f588f20a18ff72d648192"><div class="ttname"><a href="classInterface.html#aba762214883f588f20a18ff72d648192">Interface::GetServerAddress</a></div><div class="ttdeci">std::string GetServerAddress() const</div><div class="ttdoc">Получение адреса сервера.</div><div class="ttdef"><b>Definition:</b> interface.h:75</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

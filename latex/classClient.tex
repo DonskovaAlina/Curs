@@ -1,0 +1,138 @@
+\hypertarget{classClient}{}\doxysection{Класс Client}
+\label{classClient}\index{Client@{Client}}
+
+
+Класс для взаимодействия с сервером.  
+
+
+
+
+{\ttfamily \#include $<$client.\+h$>$}
+
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classClient_aef57e3f45ee88eb66174e2acf445c8c3}{Client}} (const std\+::string \&server\+\_\+address, int server\+\_\+port)
+\begin{DoxyCompactList}\small\item\em Конструктор класса \mbox{\hyperlink{classClient}{Client}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classClient_a840e519ca781888cbd54181572ebe3a7}\label{classClient_a840e519ca781888cbd54181572ebe3a7}} 
+{\bfseries $\sim$\+Client} ()
+\begin{DoxyCompactList}\small\item\em Деструктор класса \mbox{\hyperlink{classClient}{Client}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classClient_a05bf1f84a6edc747c43bcb67a795cb40}{Connect}} ()
+\begin{DoxyCompactList}\small\item\em Подключение к серверу. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classClient_a14012bc7354744e5a5cb3d81f694aba5}{Authenticate}} (const std\+::string \&login, const std\+::string \&password)
+\begin{DoxyCompactList}\small\item\em Аутентификация на сервере. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classClient_aa74224fb6330117adb2f24f59aeb7952}{Send\+Vectors}} (const std\+::vector$<$ std\+::vector$<$ float $>$ $>$ \&vectors, const std\+::string \&output\+\_\+file)
+\begin{DoxyCompactList}\small\item\em Отправка векторов на сервер. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classClient_a7783f913cb850335f9af57514863fc12}{SHA224\+\_\+hash}} (const std\+::string \&input)
+\begin{DoxyCompactList}\small\item\em Вычисление SHA-\/224 хеша. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Класс для взаимодействия с сервером. 
+
+Этот класс предоставляет методы для подключения к серверу, аутентификации и отправки данных. 
+
+\doxysubsection{Конструктор(ы)}
+\mbox{\Hypertarget{classClient_aef57e3f45ee88eb66174e2acf445c8c3}\label{classClient_aef57e3f45ee88eb66174e2acf445c8c3}} 
+\index{Client@{Client}!Client@{Client}}
+\index{Client@{Client}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{Client()}{Client()}}
+{\footnotesize\ttfamily Client\+::\+Client (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{server\+\_\+address,  }\item[{int}]{server\+\_\+port }\end{DoxyParamCaption})}
+
+
+
+Конструктор класса \mbox{\hyperlink{classClient}{Client}}. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em server\+\_\+address} & Адрес сервера. \\
+\hline
+{\em server\+\_\+port} & Порт сервера. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{classClient_a14012bc7354744e5a5cb3d81f694aba5}\label{classClient_a14012bc7354744e5a5cb3d81f694aba5}} 
+\index{Client@{Client}!Authenticate@{Authenticate}}
+\index{Authenticate@{Authenticate}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{Authenticate()}{Authenticate()}}
+{\footnotesize\ttfamily void Client\+::\+Authenticate (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{login,  }\item[{const std\+::string \&}]{password }\end{DoxyParamCaption})}
+
+
+
+Аутентификация на сервере. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em login} & Логин пользователя. \\
+\hline
+{\em password} & Пароль пользователя. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::runtime\+\_\+error} & В случае ошибки аутентификации. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classClient_a05bf1f84a6edc747c43bcb67a795cb40}\label{classClient_a05bf1f84a6edc747c43bcb67a795cb40}} 
+\index{Client@{Client}!Connect@{Connect}}
+\index{Connect@{Connect}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{Connect()}{Connect()}}
+{\footnotesize\ttfamily void Client\+::\+Connect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Подключение к серверу. 
+
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::runtime\+\_\+error} & В случае ошибки подключения. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classClient_aa74224fb6330117adb2f24f59aeb7952}\label{classClient_aa74224fb6330117adb2f24f59aeb7952}} 
+\index{Client@{Client}!SendVectors@{SendVectors}}
+\index{SendVectors@{SendVectors}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{SendVectors()}{SendVectors()}}
+{\footnotesize\ttfamily void Client\+::\+Send\+Vectors (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ float $>$ $>$ \&}]{vectors,  }\item[{const std\+::string \&}]{output\+\_\+file }\end{DoxyParamCaption})}
+
+
+
+Отправка векторов на сервер. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em vectors} & Векторы для отправки. \\
+\hline
+{\em output\+\_\+file} & Файл для записи результатов. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::runtime\+\_\+error} & В случае ошибки отправки данных. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classClient_a7783f913cb850335f9af57514863fc12}\label{classClient_a7783f913cb850335f9af57514863fc12}} 
+\index{Client@{Client}!SHA224\_hash@{SHA224\_hash}}
+\index{SHA224\_hash@{SHA224\_hash}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{SHA224\_hash()}{SHA224\_hash()}}
+{\footnotesize\ttfamily std\+::string Client\+::\+SHA224\+\_\+hash (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{input }\end{DoxyParamCaption})}
+
+
+
+Вычисление SHA-\/224 хеша. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em input} & Входная строка для хеширования. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Хеш в виде строки. 
+\end{DoxyReturn}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+/home/stud/\+Desktop/клиент/client\+\_\+new/\mbox{\hyperlink{client_8h}{client.\+h}}\item 
+/home/stud/\+Desktop/клиент/client\+\_\+new/\mbox{\hyperlink{client_8cpp}{client.\+cpp}}\end{DoxyCompactItemize}

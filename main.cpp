@@ -1,44 +1,36 @@
+/**
+ * @file main.cpp
+ * @brief Основной файл программы.
+ * @author Донскова А.Д.
+ * @version 1.0
+ * @date 22.12.2024 
+ */
 #include "interface.h"
 #include "client.h"
 #include <iostream>
-#include <stdexcept>
-#include <unistd.h>
 
-using namespace std;
-
-int main(int argc, char *argv[]) {
-    string input_file;
-    string output_file;
-    string config_file;
-
-    // Обработка аргументов командной строки
+/**
+ * @brief Точка входа в программу.
+ * @param argc Количество аргументов командной строки.
+ * @param argv Массив аргументов командной строки.
+ * @return Код возврата.
+ */
+int main(int argc, char* argv[]) {
     try {
-        parse_command_line_arguments(argc, argv, input_file, output_file, config_file);
-    } catch (const exception &e) {
-        cerr << "Ошибка: " << e.what() << endl;
-        return 1;
-    }
+        Interface interface(argc, argv);
+        interface.ParseCommandLine();
 
-    // Проверка, что все необходимые параметры указаны
-    if (input_file.empty() || output_file.empty()) {
-        cerr << "Ошибка: файл входных данных и файл результатов должны быть указаны." << endl;
-        return 1;
-    }
+        std::string login, password;
+        interface.ReadConfigFile(interface.GetConfigFile(), login, password);
 
-    try {
-        auto vectors = read_vectors_from_file(input_file);
-        int sock = connect_to_server(); // Используются фикс адрес и порт
+        Client client(interface.GetServerAddress(), interface.GetServerPort());
+        client.Connect();
+        client.Authenticate(login, password);
 
-        string login, password;
-        read_config(config_file, login, password); // Чтение конфигурации
-
-        authenticate_client(sock, login, password);
-        send_vectors(sock, vectors, output_file); // Передача имени выходного файла
-
-        close(sock);
-        cout << "Соединение с сервером закрыто." << endl;
-    } catch (const exception &e) {
-        cerr << "Ошибка: " << e.what() << endl;
+        auto vectors = interface.ReadVectorsFromFile(interface.GetInputFile());
+        client.SendVectors(vectors, interface.GetOutputFile());
+    } catch (const std::exception& e) {
+        std::cerr << "Ошибка: " << e.what() << std::endl;
         return 1;
     }
 

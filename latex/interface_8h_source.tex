@@ -1,0 +1,45 @@
+\hypertarget{interface_8h_source}{}\doxysection{interface.\+h}
+\label{interface_8h_source}\index{/home/stud/Desktop/клиент/client\_new/interface.h@{/home/stud/Desktop/клиент/client\_new/interface.h}}
+\mbox{\hyperlink{interface_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef INTERFACE\_H}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define INTERFACE\_H}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classInterface}{Interface}} \{}
+\DoxyCodeLine{22 \textcolor{keyword}{public}:}
+\DoxyCodeLine{28     \mbox{\hyperlink{classInterface_a3c2384b5a07991ada02fa4a5698fd5af}{Interface}}(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char}* argv[]);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{34     \textcolor{keywordtype}{void} \mbox{\hyperlink{classInterface_a0b3d5a6257d96567329e15300ffdee0d}{ParseCommandLine}}();}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{42     std::vector<std::vector<float>> \mbox{\hyperlink{classInterface_a67d862c4d181522ffcac372526f9cd13}{ReadVectorsFromFile}}(\textcolor{keyword}{const} std::string\& filename);}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{51     \textcolor{keywordtype}{void} \mbox{\hyperlink{classInterface_a9b615841f25b38f81f130a1fd619fcbf}{ReadConfigFile}}(\textcolor{keyword}{const} std::string\& config\_file, std::string\& login, std::string\& password);}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{57     std::string \mbox{\hyperlink{classInterface_a1d895d12687b8d58c6e1fa5b674217dd}{GetInputFile}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} input\_file\_; \}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{63     std::string \mbox{\hyperlink{classInterface_a57ccf2f10a29c387bf34bdd9dda1f96d}{GetOutputFile}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} output\_file\_; \}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{69     std::string \mbox{\hyperlink{classInterface_a6a54404ae06d88627e30e4364947e678}{GetConfigFile}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} config\_file\_; \}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{75     std::string \mbox{\hyperlink{classInterface_aba762214883f588f20a18ff72d648192}{GetServerAddress}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} server\_address\_; \}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{81     \textcolor{keywordtype}{int} \mbox{\hyperlink{classInterface_a281987c6e9603b4ed51a62d758a49911}{GetServerPort}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} server\_port\_; \}}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 \textcolor{keyword}{private}:}
+\DoxyCodeLine{84     \textcolor{keywordtype}{int} argc\_; }
+\DoxyCodeLine{85     \textcolor{keywordtype}{char}** argv\_; }
+\DoxyCodeLine{86     std::string input\_file\_; }
+\DoxyCodeLine{87     std::string output\_file\_; }
+\DoxyCodeLine{88     std::string config\_file\_; }
+\DoxyCodeLine{89     std::string server\_address\_; }
+\DoxyCodeLine{90     \textcolor{keywordtype}{int} server\_port\_; }
+\DoxyCodeLine{91 \};}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// INTERFACE\_H}}
+
+\end{DoxyCode}

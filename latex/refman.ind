@@ -1,0 +1,82 @@
+\begin{theindex}
+
+  \item {/home/stud/Desktop/клиент/client\_new/client.cpp}, 
+		\hyperpage{19}
+  \item {/home/stud/Desktop/клиент/client\_new/client.h}, 
+		\hyperpage{15, 16}
+  \item {/home/stud/Desktop/клиент/client\_new/interface.cpp}, 
+		\hyperpage{13}
+  \item {/home/stud/Desktop/клиент/client\_new/interface.h}, 
+		\hyperpage{17, 18}
+  \item {/home/stud/Desktop/клиент/client\_new/main.cpp}, 
+		\hyperpage{14}
+
+  \indexspace
+
+  \item {Authenticate}
+    \subitem {Client}, \hyperpage{6}
+
+  \indexspace
+
+  \item {Client}, \hyperpage{5}
+    \subitem {Authenticate}, \hyperpage{6}
+    \subitem {Client}, \hyperpage{5}
+    \subitem {Connect}, \hyperpage{6}
+    \subitem {SendVectors}, \hyperpage{6}
+    \subitem {SHA224\_hash}, \hyperpage{8}
+  \item {Connect}
+    \subitem {Client}, \hyperpage{6}
+
+  \indexspace
+
+  \item {GetConfigFile}
+    \subitem {Interface}, \hyperpage{9}
+  \item {GetInputFile}
+    \subitem {Interface}, \hyperpage{10}
+  \item {GetOutputFile}
+    \subitem {Interface}, \hyperpage{10}
+  \item {GetServerAddress}
+    \subitem {Interface}, \hyperpage{10}
+  \item {GetServerPort}
+    \subitem {Interface}, \hyperpage{10}
+
+  \indexspace
+
+  \item {Interface}, \hyperpage{8}
+    \subitem {GetConfigFile}, \hyperpage{9}
+    \subitem {GetInputFile}, \hyperpage{10}
+    \subitem {GetOutputFile}, \hyperpage{10}
+    \subitem {GetServerAddress}, \hyperpage{10}
+    \subitem {GetServerPort}, \hyperpage{10}
+    \subitem {Interface}, \hyperpage{9}
+    \subitem {ParseCommandLine}, \hyperpage{10}
+    \subitem {ReadConfigFile}, \hyperpage{11}
+    \subitem {ReadVectorsFromFile}, \hyperpage{11}
+
+  \indexspace
+
+  \item {main}
+    \subitem {main.cpp}, \hyperpage{14}
+  \item {main.cpp}
+    \subitem {main}, \hyperpage{14}
+
+  \indexspace
+
+  \item {ParseCommandLine}
+    \subitem {Interface}, \hyperpage{10}
+
+  \indexspace
+
+  \item {ReadConfigFile}
+    \subitem {Interface}, \hyperpage{11}
+  \item {ReadVectorsFromFile}
+    \subitem {Interface}, \hyperpage{11}
+
+  \indexspace
+
+  \item {SendVectors}
+    \subitem {Client}, \hyperpage{6}
+  \item {SHA224\_hash}
+    \subitem {Client}, \hyperpage{8}
+
+\end{theindex}

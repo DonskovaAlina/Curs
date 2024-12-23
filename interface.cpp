@@ -1,101 +1,123 @@
+/**
+ * @file interface.cpp
+ * @brief Реализация класса Interface.
+ * @author Донскова А.Д.
+ * @version 1.0
+ * @date 22.12.2024 
+ */
 #include "interface.h"
 #include <iostream>
 #include <fstream>
-#include <stdexcept>
-#include <vector>
-#include <iomanip>
 #include <getopt.h>
+#include <cstring>
 
-using namespace std;
+/**
+ * @brief Конструктор класса Interface.
+ * @param argc Количество аргументов командной строки.
+ * @param argv Массив аргументов командной строки.
+ */
+Interface::Interface(int argc, char* argv[])
+    : argc_(argc), argv_(argv), server_port_(33333) {}
 
-// Функция для обработки аргументов командной строки
-void parse_command_line_arguments(int argc, char *argv[], string &input_file, string &output_file, string &config_file) {
-    config_file = string(getenv("HOME")) + "/.config/vclient.conf"; // Значение по умолчанию
+/**
+ * @brief Парсинг командной строки.
+ * @throws std::runtime_error В случае ошибки парсинга.
+ */
+void Interface::ParseCommandLine() {
+    const char* short_options = "i:o:c:a:p:h";
+    struct option long_options[] = {
+        {"input", required_argument, nullptr, 'i'},
+        {"output", required_argument, nullptr, 'o'},
+        {"config", required_argument, nullptr, 'c'},
+        {"address", required_argument, nullptr, 'a'},
+        {"port", required_argument, nullptr, 'p'},
+        {"help", no_argument, nullptr, 'h'},
+        {nullptr, 0, nullptr, 0}
+    };
 
     int opt;
-    while ((opt = getopt(argc, argv, ":i:o:c:h")) != -1) {
+    while ((opt = getopt_long(argc_, argv_, short_options, long_options, nullptr)) != -1) {
         switch (opt) {
-            case 'h':
-                cout << "Использование: " << argv[0]
-                     << " -i <файл входных данных> -o <файл результатов> -c <файл конфигурации>" << endl;
-                exit(0); // Выход с выводом справки
             case 'i':
-                input_file = optarg;
+                input_file_ = optarg;
                 break;
             case 'o':
-                output_file = optarg;
+                output_file_ = optarg;
                 break;
             case 'c':
-                config_file = optarg;
+                config_file_ = optarg;
                 break;
+            case 'a':
+                server_address_ = optarg;
+                break;
+            case 'p':
+                server_port_ = std::stoi(optarg);
+                break;
+            case 'h':
+                std::cout << "Использование: " << argv_[0]
+                          << " -i <файл входных данных> -o <файл результатов> -c <файл конфигурации> -a <адрес сервера> [-p <порт сервера>]" << std::endl;
+                exit(0);
             default:
-                throw runtime_error("Неверные параметры.");
+                throw std::runtime_error("Неверные параметры.");
         }
     }
 
-    // Проверка на обязательные параметры
-    if (input_file.empty() || output_file.empty()) {
-        throw runtime_error("Файл входных данных и файл результатов должны быть указаны.");
-        cout << " -i <файл входных данных> -o <файл результатов> -c <файл конфигурации>" << endl;
+    if (input_file_.empty() || output_file_.empty() || server_address_.empty()) {
+        throw std::runtime_error("Файл входных данных, файл результатов и адрес сервера должны быть указаны.");
+    }
+
+    if (server_port_ < 0 || server_port_ > 65535) {
+        throw std::runtime_error("Недопустимое значение порта. Порт должен быть в диапазоне от 0 до 65535.");
     }
 }
 
-// Функция для чтения векторов из бинарного файла
-vector<vector<float>> read_vectors_from_file(const string &filename) {
-    cout << "Чтение векторов из файла: " << filename << endl;
-    ifstream file(filename, ios::binary);
+/**
+ * @brief Чтение векторов из файла.
+ * @param filename Имя файла.
+ * @return Вектор векторов типа float.
+ * @throws std::runtime_error В случае ошибки чтения файла.
+ */
+std::vector<std::vector<float>> Interface::ReadVectorsFromFile(const std::string& filename) {
+    std::ifstream file(filename, std::ios::binary);
     if (!file) {
-        throw runtime_error("Ошибка открытия файла: " + filename);
+        throw std::runtime_error("Ошибка открытия файла: " + filename);
     }
 
     uint32_t N;
-    file.read(reinterpret_cast<char *>(&N), sizeof(N));
-    if (file.gcount() != sizeof(N)) {
-        throw runtime_error("Ошибка чтения количества векторов из файла: " + filename);
-    }
-    
-    cout << "Найдено " << N << " векторов." << endl;
+    file.read(reinterpret_cast<char*>(&N), sizeof(N));
+    std::vector<std::vector<float>> vectors(N);
 
-    vector<vector<float>> vectors(N);
     for (uint32_t i = 0; i < N; ++i) {
         uint32_t S;
-        file.read(reinterpret_cast<char *>(&S), sizeof(S));
-        if (file.gcount() != sizeof(S)) {
-            throw runtime_error("Ошибка чтения размера вектора " + to_string(i) + " из файла: " + filename);
-        }
-        
+        file.read(reinterpret_cast<char*>(&S), sizeof(S));
         vectors[i].resize(S);
-        file.read(reinterpret_cast<char *>(vectors[i].data()), S * sizeof(float));
-        if (file.gcount() != static_cast<std::streamsize>(S * sizeof(float))) {
-            throw runtime_error("Ошибка чтения данных вектора " + to_string(i) + " из файла: " + filename);
-        }
-
-        // Вывод вектора для проверки
-        cout << "Вектор " << i + 1 << ": ";
-        for (const auto &value : vectors[i]) {
-            cout << fixed << setprecision(2) << value << " ";
-        }
-        cout << endl;
+        file.read(reinterpret_cast<char*>(vectors[i].data()), S * sizeof(float));
     }
 
     return vectors;
 }
 
-// Функция для чтения конфигурации из файла
-void read_config(const string &config_file, string &login, string &password) {
-    ifstream config(config_file);
-    if (config.is_open()) {
-        string line;
-        if (getline(config, line)) {
-            size_t delimiter_pos = line.find(':');
-            if (delimiter_pos != string::npos) {
-                login = line.substr(0, delimiter_pos);
-                password = line.substr(delimiter_pos + 1);
-            } else {
-                throw runtime_error("Неверный формат файла конфигурации. Ожидается 'user:password'.");
-            }
+/**
+ * @brief Чтение конфигурационного файла.
+ * @param config_file Имя конфигурационного файла.
+ * @param login Ссылка на строку для сохранения логина.
+ * @param password Ссылка на строку для сохранения пароля.
+ * @throws std::runtime_error В случае ошибки чтения файла.
+ */
+void Interface::ReadConfigFile(const std::string& config_file, std::string& login, std::string& password) {
+    std::ifstream config(config_file);
+    if (!config) {
+        throw std::runtime_error("Ошибка открытия файла конфигурации: " + config_file);
+    }
+
+    std::string line;
+    if (std::getline(config, line)) {
+        size_t delimiter_pos = line.find(':');
+        if (delimiter_pos != std::string::npos) {
+            login = line.substr(0, delimiter_pos);
+            password = line.substr(delimiter_pos + 1);
+        } else {
+            throw std::runtime_error("Неверный формат файла конфигурации. Ожидается 'user:password'.");
         }
-    } else {
-        throw runtime_error("Ошибка открытия файла конфигурации: " + config_file);
     }
 }

@@ -1,0 +1,37 @@
+\hypertarget{client_8h_source}{}\doxysection{client.\+h}
+\label{client_8h_source}\index{/home/stud/Desktop/клиент/client\_new/client.h@{/home/stud/Desktop/клиент/client\_new/client.h}}
+\mbox{\hyperlink{client_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef CLIENT\_H}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define CLIENT\_H}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <arpa/inet.h>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <unistd.h>}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{classClient}{Client}} \{}
+\DoxyCodeLine{24 \textcolor{keyword}{public}:}
+\DoxyCodeLine{30     \mbox{\hyperlink{classClient_aef57e3f45ee88eb66174e2acf445c8c3}{Client}}(\textcolor{keyword}{const} std::string\& server\_address, \textcolor{keywordtype}{int} server\_port);}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{35     \mbox{\hyperlink{classClient_a840e519ca781888cbd54181572ebe3a7}{\string~Client}}();}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{41     \textcolor{keywordtype}{void} \mbox{\hyperlink{classClient_a05bf1f84a6edc747c43bcb67a795cb40}{Connect}}();}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{49     \textcolor{keywordtype}{void} \mbox{\hyperlink{classClient_a14012bc7354744e5a5cb3d81f694aba5}{Authenticate}}(\textcolor{keyword}{const} std::string\& login, \textcolor{keyword}{const} std::string\& password);}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{57     \textcolor{keywordtype}{void} \mbox{\hyperlink{classClient_aa74224fb6330117adb2f24f59aeb7952}{SendVectors}}(\textcolor{keyword}{const} std::vector<std::vector<float>>\& vectors, \textcolor{keyword}{const} std::string\& output\_file);}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{64     std::string \mbox{\hyperlink{classClient_a7783f913cb850335f9af57514863fc12}{SHA224\_hash}}(\textcolor{keyword}{const} std::string\& input);}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{keyword}{private}:}
+\DoxyCodeLine{67     std::string server\_address\_; }
+\DoxyCodeLine{68     \textcolor{keywordtype}{int} server\_port\_; }
+\DoxyCodeLine{69     \textcolor{keywordtype}{int} sock\_; }
+\DoxyCodeLine{70 \};}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// CLIENT\_H}}
+
+\end{DoxyCode}

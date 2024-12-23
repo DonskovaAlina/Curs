@@ -1,0 +1,193 @@
+\hypertarget{classInterface}{}\doxysection{Класс Interface}
+\label{classInterface}\index{Interface@{Interface}}
+
+
+Класс для обработки командной строки и чтения файлов.  
+
+
+
+
+{\ttfamily \#include $<$interface.\+h$>$}
+
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classInterface_a3c2384b5a07991ada02fa4a5698fd5af}{Interface}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Конструктор класса \mbox{\hyperlink{classInterface}{Interface}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classInterface_a0b3d5a6257d96567329e15300ffdee0d}{Parse\+Command\+Line}} ()
+\begin{DoxyCompactList}\small\item\em Парсинг командной строки. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ float $>$ $>$ \mbox{\hyperlink{classInterface_a67d862c4d181522ffcac372526f9cd13}{Read\+Vectors\+From\+File}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Чтение векторов из файла. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classInterface_a9b615841f25b38f81f130a1fd619fcbf}{Read\+Config\+File}} (const std\+::string \&config\+\_\+file, std\+::string \&login, std\+::string \&password)
+\begin{DoxyCompactList}\small\item\em Чтение конфигурационного файла. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classInterface_a1d895d12687b8d58c6e1fa5b674217dd}{Get\+Input\+File}} () const
+\begin{DoxyCompactList}\small\item\em Получение имени входного файла. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classInterface_a57ccf2f10a29c387bf34bdd9dda1f96d}{Get\+Output\+File}} () const
+\begin{DoxyCompactList}\small\item\em Получение имени выходного файла. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classInterface_a6a54404ae06d88627e30e4364947e678}{Get\+Config\+File}} () const
+\begin{DoxyCompactList}\small\item\em Получение имени конфигурационного файла. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classInterface_aba762214883f588f20a18ff72d648192}{Get\+Server\+Address}} () const
+\begin{DoxyCompactList}\small\item\em Получение адреса сервера. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classInterface_a281987c6e9603b4ed51a62d758a49911}{Get\+Server\+Port}} () const
+\begin{DoxyCompactList}\small\item\em Получение порта сервера. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Класс для обработки командной строки и чтения файлов. 
+
+Этот класс предоставляет методы для парсинга командной строки, чтения векторов из файла и чтения конфигурационного файла. 
+
+\doxysubsection{Конструктор(ы)}
+\mbox{\Hypertarget{classInterface_a3c2384b5a07991ada02fa4a5698fd5af}\label{classInterface_a3c2384b5a07991ada02fa4a5698fd5af}} 
+\index{Interface@{Interface}!Interface@{Interface}}
+\index{Interface@{Interface}!Interface@{Interface}}
+\doxysubsubsection{\texorpdfstring{Interface()}{Interface()}}
+{\footnotesize\ttfamily Interface\+::\+Interface (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Конструктор класса \mbox{\hyperlink{classInterface}{Interface}}. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em argc} & Количество аргументов командной строки. \\
+\hline
+{\em argv} & Массив аргументов командной строки. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{classInterface_a6a54404ae06d88627e30e4364947e678}\label{classInterface_a6a54404ae06d88627e30e4364947e678}} 
+\index{Interface@{Interface}!GetConfigFile@{GetConfigFile}}
+\index{GetConfigFile@{GetConfigFile}!Interface@{Interface}}
+\doxysubsubsection{\texorpdfstring{GetConfigFile()}{GetConfigFile()}}
+{\footnotesize\ttfamily std\+::string Interface\+::\+Get\+Config\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Получение имени конфигурационного файла. 
+
+\begin{DoxyReturn}{Возвращает}
+Имя конфигурационного файла. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classInterface_a1d895d12687b8d58c6e1fa5b674217dd}\label{classInterface_a1d895d12687b8d58c6e1fa5b674217dd}} 
+\index{Interface@{Interface}!GetInputFile@{GetInputFile}}
+\index{GetInputFile@{GetInputFile}!Interface@{Interface}}
+\doxysubsubsection{\texorpdfstring{GetInputFile()}{GetInputFile()}}
+{\footnotesize\ttfamily std\+::string Interface\+::\+Get\+Input\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Получение имени входного файла. 
+
+\begin{DoxyReturn}{Возвращает}
+Имя входного файла. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classInterface_a57ccf2f10a29c387bf34bdd9dda1f96d}\label{classInterface_a57ccf2f10a29c387bf34bdd9dda1f96d}} 
+\index{Interface@{Interface}!GetOutputFile@{GetOutputFile}}
+\index{GetOutputFile@{GetOutputFile}!Interface@{Interface}}
+\doxysubsubsection{\texorpdfstring{GetOutputFile()}{GetOutputFile()}}
+{\footnotesize\ttfamily std\+::string Interface\+::\+Get\+Output\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Получение имени выходного файла. 
+
+\begin{DoxyReturn}{Возвращает}
+Имя выходного файла. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classInterface_aba762214883f588f20a18ff72d648192}\label{classInterface_aba762214883f588f20a18ff72d648192}} 
+\index{Interface@{Interface}!GetServerAddress@{GetServerAddress}}
+\index{GetServerAddress@{GetServerAddress}!Interface@{Interface}}
+\doxysubsubsection{\texorpdfstring{GetServerAddress()}{GetServerAddress()}}
+{\footnotesize\ttfamily std\+::string Interface\+::\+Get\+Server\+Address (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Получение адреса сервера. 
+
+\begin{DoxyReturn}{Возвращает}
+Адрес сервера. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classInterface_a281987c6e9603b4ed51a62d758a49911}\label{classInterface_a281987c6e9603b4ed51a62d758a49911}} 
+\index{Interface@{Interface}!GetServerPort@{GetServerPort}}
+\index{GetServerPort@{GetServerPort}!Interface@{Interface}}
+\doxysubsubsection{\texorpdfstring{GetServerPort()}{GetServerPort()}}
+{\footnotesize\ttfamily int Interface\+::\+Get\+Server\+Port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Получение порта сервера. 
+
+\begin{DoxyReturn}{Возвращает}
+Порт сервера. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classInterface_a0b3d5a6257d96567329e15300ffdee0d}\label{classInterface_a0b3d5a6257d96567329e15300ffdee0d}} 
+\index{Interface@{Interface}!ParseCommandLine@{ParseCommandLine}}
+\index{ParseCommandLine@{ParseCommandLine}!Interface@{Interface}}
+\doxysubsubsection{\texorpdfstring{ParseCommandLine()}{ParseCommandLine()}}
+{\footnotesize\ttfamily void Interface\+::\+Parse\+Command\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Парсинг командной строки. 
+
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::runtime\+\_\+error} & В случае ошибки парсинга. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classInterface_a9b615841f25b38f81f130a1fd619fcbf}\label{classInterface_a9b615841f25b38f81f130a1fd619fcbf}} 
+\index{Interface@{Interface}!ReadConfigFile@{ReadConfigFile}}
+\index{ReadConfigFile@{ReadConfigFile}!Interface@{Interface}}
+\doxysubsubsection{\texorpdfstring{ReadConfigFile()}{ReadConfigFile()}}
+{\footnotesize\ttfamily void Interface\+::\+Read\+Config\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{config\+\_\+file,  }\item[{std\+::string \&}]{login,  }\item[{std\+::string \&}]{password }\end{DoxyParamCaption})}
+
+
+
+Чтение конфигурационного файла. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em config\+\_\+file} & Имя конфигурационного файла. \\
+\hline
+{\em login} & Ссылка на строку для сохранения логина. \\
+\hline
+{\em password} & Ссылка на строку для сохранения пароля. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::runtime\+\_\+error} & В случае ошибки чтения файла. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classInterface_a67d862c4d181522ffcac372526f9cd13}\label{classInterface_a67d862c4d181522ffcac372526f9cd13}} 
+\index{Interface@{Interface}!ReadVectorsFromFile@{ReadVectorsFromFile}}
+\index{ReadVectorsFromFile@{ReadVectorsFromFile}!Interface@{Interface}}
+\doxysubsubsection{\texorpdfstring{ReadVectorsFromFile()}{ReadVectorsFromFile()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ float $>$ $>$ Interface\+::\+Read\+Vectors\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Чтение векторов из файла. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em filename} & Имя файла. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Вектор векторов типа float. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::runtime\+\_\+error} & В случае ошибки чтения файла. \\
+\hline
+\end{DoxyExceptions}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+/home/stud/\+Desktop/клиент/client\+\_\+new/\mbox{\hyperlink{interface_8h}{interface.\+h}}\item 
+/home/stud/\+Desktop/клиент/client\+\_\+new/\mbox{\hyperlink{interface_8cpp}{interface.\+cpp}}\end{DoxyCompactItemize}
